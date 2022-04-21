@@ -17,30 +17,36 @@ Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 Constraints:
 0 <= s.length <= 5 * 104
-s consists of English letters, digits, symbols and spaces.*/
-prototypeOfResult = [];
+s consists of English letters, digits, symbols and spaces.
+
+*/
+
+let prototypeOfResult = [];
 
 function subs(s){
     let separador = s.split("");
-    separador.forEach(function seeker(item, index){
+        
+    for(i = 0; i < (separador.length - separador.length + 1); i++){
 
-            for(i = 0; i <= separador.length; i++){
+        prototypeOfResult.push(separador[i])
+
+            for(j = 0; j <= separador.length; j++){
             
-                if(item === separador[i]){
+                if(separador[j] === separador[i]){
                     continue;
                     }
 
-                else if(item === prototypeOfResult[i]){
-                    continue;
-                }
-
-                else if((item !== separador[i] && (i !== index))){
-                    prototypeOfResult.push(item);
-                    break;
+                else if(separador[j] !== separador[i]){
+                    if(prototypeOfResult.includes(separador[j])){
+                        continue;
+                    }
+                    else{
+                        prototypeOfResult.push(separador[j]);
+                    }
                     }
 
             }
 
-    })
-    return prototypeOfResult.toString();
+    }
+    return prototypeOfResult.toString("");
 }
