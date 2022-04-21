@@ -16,3 +16,19 @@ Constraints:
 The number of nodes in each linked list is in the range [1, 100].
 0 <= Node.val <= 9
 It is guaranteed that the list represents a number that does not have leading zeros.*/
+let lastList = [];
+
+function sumador(firstList, secondList){
+
+    element1 = parseInt(firstList.reverse().join(""));
+    element2 = parseInt(secondList.reverse().join(""));
+    result = element1 + element2;
+    arrResult = result.toString().split("").reverse();
+        arrResult.forEach(function newArray(item, index){
+
+            lastList.push(item);
+
+        })
+
+    return lastList;
+}
