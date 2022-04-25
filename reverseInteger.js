@@ -29,6 +29,6 @@ function converter(num1){
                 resultFinal.push(finalNumber[i])
             }
         }
-    let versionBeta = resultFinal.join("").toInteger();
+    let versionBeta = resultFinal.join("");
     return versionBeta;
-;}
+}
